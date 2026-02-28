@@ -152,3 +152,5 @@ class Insight(models.Model):
 
     def __str__(self):
         return f"Insight for {self.product}"
+
+
