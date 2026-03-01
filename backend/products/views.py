@@ -1,15 +1,43 @@
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
-from .models import Product
-from .serializers import ProductSerializer
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from rest_framework import status as drf_status
 
-# Create your views here.
+from products.models import Product
+from products.serializers import ProductSerializer
+from products.services.source_discovery import SourceDiscoveryService
+
 
 class ProductViewSet(viewsets.ModelViewSet):
+
     queryset = Product.objects.all().order_by("-created_at")
     serializer_class = ProductSerializer
     permission_classes = [AllowAny]
 
+
     def perform_create(self, serializer):
+
         serializer.save(status=Product.Status.CREATED)
 
+
+    @action(detail=True, methods=["post"])
+    def discover(self, request, pk=None):
+
+        product = self.get_object()
+
+        if product.status != Product.Status.CREATED:
+
+            return Response(
+                {"error": "Discovery already executed or invalid state"},
+                status=drf_status.HTTP_400_BAD_REQUEST
+            )
+
+        service = SourceDiscoveryService()
+
+        service.discover_sources(product)
+
+        return Response(
+            {"message": "Source discovery completed"},
+            status=drf_status.HTTP_200_OK
+        )
