@@ -95,17 +95,19 @@ class ProductSource(models.Model):
     def __str__(self):
         return f"{self.product} → {self.source}"
 
-
 class RawData(models.Model):
+
     class DataType(models.TextChoices):
         HTML = "HTML", "HTML"
         TEXT = "TEXT", "Text"
         JSON = "JSON", "JSON"
         TRANSCRIPT = "TRANSCRIPT", "Transcript"
 
+
     class Status(models.TextChoices):
         FETCHED = "FETCHED", "Fetched"
         FAILED = "FAILED", "Failed"
+
 
     product_source = models.ForeignKey(
         ProductSource,
@@ -113,12 +115,22 @@ class RawData(models.Model):
         related_name="raw_data",
     )
 
+
+    source_identifier = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True
+    )
+
+
     data_type = models.CharField(
         max_length=20,
         choices=DataType.choices,
     )
 
+
     content = models.TextField()
+
 
     status = models.CharField(
         max_length=20,
@@ -126,7 +138,9 @@ class RawData(models.Model):
         default=Status.FETCHED,
     )
 
+
     fetched_at = models.DateTimeField(auto_now_add=True)
+
 
     def __str__(self):
         return f"{self.product_source} [{self.data_type}]"

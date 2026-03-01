@@ -7,6 +7,8 @@ from rest_framework import status as drf_status
 from products.models import Product
 from products.serializers import ProductSerializer
 from products.services.source_discovery import SourceDiscoveryService
+from products.services.data_collection import DataCollectionService
+
 
 
 class ProductViewSet(viewsets.ModelViewSet):
@@ -41,3 +43,30 @@ class ProductViewSet(viewsets.ModelViewSet):
             {"message": "Source discovery completed"},
             status=drf_status.HTTP_200_OK
         )
+    
+
+    @action(detail=True, methods=["post"])
+    def collect(self, request, pk=None):
+
+        product = self.get_object()
+
+        pending_sources = product.sources.filter(
+            status="PENDING"
+        )
+
+        if not pending_sources.exists():
+
+            return Response(
+                {"error": "No pending sources to collect"},
+                status=400
+            )
+
+        service = DataCollectionService()
+
+        for ps in pending_sources:
+
+            service.collect(ps)
+
+        return Response(
+            {"message": "Data collection completed"}
+        )   
