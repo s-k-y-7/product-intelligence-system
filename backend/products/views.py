@@ -8,6 +8,7 @@ from products.models import Product
 from products.serializers import ProductSerializer
 from products.services.source_discovery import SourceDiscoveryService
 from products.services.data_collection import DataCollectionService
+from products.services.insights import InsightService
 
 
 
