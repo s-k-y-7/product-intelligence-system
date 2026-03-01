@@ -70,3 +70,14 @@ class ProductViewSet(viewsets.ModelViewSet):
         return Response(
             {"message": "Data collection completed"}
         )   
+    
+    @action(detail=True, methods=["post"])
+    def analyze(self, request, pk=None):
+
+        product = self.get_object()
+
+        service = InsightService()
+
+        insight = service.generate(product)
+
+        return Response(insight.content)
