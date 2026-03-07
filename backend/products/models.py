@@ -45,6 +45,8 @@ class Source(models.Model):
         choices=SourceType.choices
     )
 
+    code = models.CharField(max_length=50, unique=True) 
+
     base_url = models.URLField(blank=True, null=True)
 
     is_active = models.BooleanField(default=True) # To enable/disable source without deleting it
@@ -129,7 +131,7 @@ class RawData(models.Model):
     )
 
 
-    content = models.TextField()
+    content = models.JSONField()
 
 
     status = models.CharField(

@@ -45,32 +45,15 @@ class ProductViewSet(viewsets.ModelViewSet):
             status=drf_status.HTTP_200_OK
         )
     
-
     @action(detail=True, methods=["post"])
     def collect(self, request, pk=None):
 
         product = self.get_object()
 
-        pending_sources = product.sources.filter(
-            status="PENDING"
-        )
-
-        if not pending_sources.exists():
-
-            return Response(
-                {"error": "No pending sources to collect"},
-                status=400
-            )
-
         service = DataCollectionService()
+        service.collect(product)
 
-        for ps in pending_sources:
-
-            service.collect(ps)
-
-        return Response(
-            {"message": "Data collection completed"}
-        )   
+        return Response({"message": "Data collection completed"}) 
     
     @action(detail=True, methods=["post"])
     def analyze(self, request, pk=None):
@@ -79,6 +62,6 @@ class ProductViewSet(viewsets.ModelViewSet):
 
         service = InsightService()
 
-        insight = service.generate(product)
+        insight_content = service.generate(product)
 
-        return Response(insight.content)
+        return Response(insight_content)
