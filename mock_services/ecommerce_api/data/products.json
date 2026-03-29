@@ -1,0 +1,34 @@
+[
+  {
+    "id": "iphone-15",
+    "title": "Apple iPhone 15",
+    "brand": "Apple",
+    "price": 799,
+    "rating": 4.7,
+    "availability": true
+  },
+  {
+    "id": "iphone-14",
+    "title": "Apple iPhone 14",
+    "brand": "Apple",
+    "price": 699,
+    "rating": 4.6,
+    "availability": true
+  },
+  {
+    "id": "samsung-s23",
+    "title": "Samsung Galaxy S23",
+    "brand": "Samsung",
+    "price": 749,
+    "rating": 4.5,
+    "availability": true
+  },
+  {
+    "id": "oneplus-11",
+    "title": "OnePlus 11",
+    "brand": "OnePlus",
+    "price": 649,
+    "rating": 4.4,
+    "availability": true
+  }
+]

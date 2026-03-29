@@ -10,7 +10,11 @@ class DummyJsonCollector(BaseCollector):
 
         full_url = f"{base_url}/products/search?q={query}"
 
-        response = requests.get(full_url)
+        print("CALLING:", full_url)
+
+        response = requests.get(full_url, timeout=3)
+
+        print("DONE:", full_url)
 
         if response.status_code != 200:
             raise Exception(f"DummyJSON fetch failed: {response.status_code}")
@@ -40,7 +44,7 @@ class DummyJsonCollector(BaseCollector):
                 "source_identifier": product.get("id"),
                 "match_score": match_score
             })
-
+            
         return {
             "content": {
                 "items": items

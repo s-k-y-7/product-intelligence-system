@@ -5,13 +5,16 @@ from .base import BaseCollector
 class FakeStoreCollector(BaseCollector):
 
     def collect(self, product_source):
-
         query = product_source.product.query.lower().split()
         base_url = product_source.source.base_url
 
         full_url = f"{base_url}/products"
 
-        response = requests.get(full_url)
+        print("CALLING:", full_url)
+
+        response = requests.get(full_url, timeout=3)
+
+        print("DONE:", full_url)
 
         if response.status_code != 200:
             raise Exception(f"FakeStore fetch failed: {response.status_code}")

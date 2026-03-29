@@ -5,39 +5,46 @@ from django.db import transaction
 
 class DataCollectionService:
 
-    @transaction.atomic
+    # @transaction.atomic
     def collect(self, product):
 
         product_sources = ProductSource.objects.filter(
             product=product,
             status=ProductSource.Status.PENDING
         )
-
+        
         for product_source in product_sources:
 
             try:
+                print("START SOURCE:", product_source.source.code)
 
                 collector = CollectorFactory.get_collector(
                     product_source.source.code
                 )
 
+
                 data = collector.collect(product_source)
 
-                RawData.objects.create(
+                print("END SOURCE:", product_source.source.code)
 
-                    product_source=product_source,
+                from django.db import transaction
 
-                    content=data["content"],
+                with transaction.atomic():
+                    RawData.objects.create(
 
-                    source_identifier=data["identifier"],
+                        product_source=product_source,
 
-                    data_type=data["data_type"],
+                        content=data["content"],
 
-                    status=RawData.Status.FETCHED
+                        source_identifier=data["identifier"],
 
-                )
+                        data_type=data["data_type"],
 
-                product_source.status = ProductSource.Status.COLLECTED
+                        status=RawData.Status.FETCHED
+
+                    )
+
+                    product_source.status = ProductSource.Status.COLLECTED
 
 
             except Exception as e:

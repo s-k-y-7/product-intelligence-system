@@ -25,8 +25,9 @@ class ProductViewSet(viewsets.ModelViewSet):
 
 
     @action(detail=True, methods=["post"])
-    def discover(self, request, pk=None):
 
+    def discover(self, request, pk=None):
+        
         product = self.get_object()
 
         if product.status != Product.Status.CREATED:
@@ -47,7 +48,7 @@ class ProductViewSet(viewsets.ModelViewSet):
     
     @action(detail=True, methods=["post"])
     def collect(self, request, pk=None):
-
+        
         product = self.get_object()
 
         service = DataCollectionService()

@@ -18,3 +18,10 @@ node_modules/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Tests (your choice)
+backend/products/tests/
+
+# Mockservices venvs
+mockservices/**/venv/
+
