@@ -1,0 +1,56 @@
+[
+    {
+      "video_id": "vid-iphone15-001",
+      "product_id": "iphone-15",
+      "title": "Apple iPhone 15 - Long Term Review",
+      "channel": "TechScope Reviews",
+      "url": "https://youtube.com/watch?v=vid-iphone15-001",
+      "published_at": "2026-01-10T09:00:00Z",
+      "transcript": "After three weeks, the Apple iPhone 15 has excellent camera consistency and good battery life for daily use. Performance is good for gaming and multitasking. The bad part is sustained heat under heavy recording, and speaker quality is poor at max volume."
+    },
+    {
+      "video_id": "vid-iphone14-001",
+      "product_id": "iphone-14",
+      "title": "Apple iPhone 14 Honest Review in 2026",
+      "channel": "MobileLens",
+      "url": "https://youtube.com/watch?v=vid-iphone14-001",
+      "published_at": "2026-01-12T12:30:00Z",
+      "transcript": "The Apple iPhone 14 still feels excellent in hand and has good software stability. The display quality is good for video and social apps. The bad side is slower charging, and low-light front camera detail can be poor compared to newer phones."
+    },
+    {
+      "video_id": "vid-s23-001",
+      "product_id": "samsung-s23",
+      "title": "Samsung Galaxy S23 Real User Review",
+      "channel": "Gadget Journal",
+      "url": "https://youtube.com/watch?v=vid-s23-001",
+      "published_at": "2026-01-15T15:45:00Z",
+      "transcript": "Alright so I’ve been using the Samsung Galaxy S23 for about three weeks now as my primary phone, and I think I finally have enough real-world experience to talk about what it actually gets right and where it falls short. This is not going to be one of those spec-sheet readings, I actually carried this phone everywhere, used it for work, social media, camera, everything.\n\nLet’s start with the design because honestly that’s the first thing you notice. The phone feels compact, and in a world where phones are getting bigger and heavier, this is actually refreshing. It’s lightweight, easy to use with one hand, and the matte finish on the back feels premium. It doesn’t attract fingerprints as much as glossy phones, which is a small but important detail. The build quality is excellent, no flex, solid frame, and overall it feels like a flagship.\n\nNow moving on to the display, and this is where Samsung rarely disappoints. The AMOLED panel here is bright, colors are punchy, blacks are deep, and the refresh rate makes everything feel smooth. Scrolling through apps, watching videos, everything just looks great. Even outdoors, visibility is solid. I didn’t have issues using it under sunlight. So in terms of display, it’s definitely one of the strong points of this phone.\n\nPerformance-wise, the Snapdragon processor inside this phone is fast. I didn’t experience lag in day-to-day usage. Apps open quickly, multitasking is smooth, and even heavier tasks like gaming run pretty well. However, I did notice that during longer gaming sessions, the phone does get a bit warm. It’s not uncomfortable, but it’s noticeable. So while performance is strong, thermal management could have been slightly better.\n\nLet’s talk about the camera because this is where a lot of people care the most. The main camera performs really well in good lighting. Photos are sharp, colors are vibrant, and dynamic range is impressive. Samsung’s image processing tends to boost colors a bit, which some people like and some don’t. Personally, I think it looks good for social media.\n\nBut low-light performance is a bit mixed. Sometimes the phone captures great detail, but other times images can look slightly noisy or over-processed. Night mode helps, but it’s not always consistent. The front camera is decent for selfies and video calls, nothing groundbreaking but reliable.\n\nBattery life is another area where I have mixed feelings. On light usage days, the phone easily lasts a full day. But on heavier usage, especially with gaming and camera usage, I found myself reaching for the charger by evening. Charging speed is okay, not the fastest in the market, but not too slow either.\n\nSoftware experience is actually pretty good. Samsung’s One UI has improved a lot over the years. It feels smooth, customizable, and feature-rich. There are still some pre-installed apps that I personally don’t use, but they can be ignored or removed. Updates are consistent, which is a big plus.\n\nNow let’s talk about the things I didn’t like as much. The phone is compact, which is great, but that also means the battery is smaller compared to bigger phones. So there is a trade-off here. Also, while the camera is good, it’s not the absolute best in this price range, especially in low light. And the heating during gaming, as I mentioned earlier, is something to keep in mind.\n\nAnother thing is pricing. This is a premium device, and while it delivers a flagship experience in many areas, there are competitors that offer slightly better battery or camera performance at similar or lower prices. So value for money depends on what you prioritize.\n\nOverall, I would say the Galaxy S23 is a well-balanced phone. It’s not perfect, but it gets most things right. If you want a compact flagship with great display and solid performance, this is a good choice. But if your priority is battery life or the absolute best camera, you might want to explore other options before making a decision."
+    },
+    {
+      "video_id": "vid-oneplus11-001",
+      "product_id": "oneplus-11",
+      "title": "OnePlus 11 Full Review - Still Worth It?",
+      "channel": "PhoneBench",
+      "url": "https://youtube.com/watch?v=vid-oneplus11-001",
+      "published_at": "2026-01-18T08:20:00Z",
+      "transcript": "OnePlus 11 has excellent charging speed and good overall performance for the price. The UI feels good and animations are smooth. The bad part is camera consistency across lenses, and low-light video stabilization is poor."
+    },
+    {
+      "video_id": "vid-iphone15-002",
+      "product_id": "iphone-15",
+      "title": "Apple iPhone 15 Camera and Battery Deep Dive",
+      "channel": "Daily Tech Notes",
+      "url": "https://youtube.com/watch?v=vid-iphone15-002",
+      "published_at": "2026-01-20T10:10:00Z",
+      "transcript": "For creators, iPhone 15 offers excellent color science and good autofocus reliability. Battery backup is good for a full workday. The bad point is that charging speed remains average, and heat management is poor during long 4K recording."
+    },
+    {
+      "video_id": "vid-s23-002",
+      "product_id": "samsung-s23",
+      "title": "Samsung Galaxy S23 One Month Later",
+      "channel": "TechScope Reviews",
+      "url": "https://youtube.com/watch?v=vid-s23-002",
+      "published_at": "2026-01-22T14:05:00Z",
+      "transcript": "One month later, Galaxy S23 still delivers excellent compact ergonomics and good standby time. Daylight photos are good and detail retention is excellent. The bad observation is shutter lag in some indoor scenes, and speaker bass is poor at high volume."
+    }
+  ]

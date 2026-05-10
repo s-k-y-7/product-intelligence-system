@@ -1,0 +1,34 @@
+[
+  {
+    "id": "iphone-15-r1",
+    "product_id": "iphone-15",
+    "title": "Apple iPhone 15",
+    "author": "Aarav",
+    "rating": 4.6,
+    "review_text": "Excellent camera quality and good day-to-day battery. The design feels premium. The bad part is heating during long video recording, and charging speed is poor compared to competitors."
+  },
+  {
+    "id": "iphone-14-r1",
+    "product_id": "iphone-14",
+    "title": "Apple iPhone 14",
+    "author": "Mira",
+    "rating": 4.4,
+    "review_text": "Good overall phone with excellent software stability and smooth performance. The bad side is slower charging, and low-light selfies can be poor."
+  },
+  {
+    "id": "samsung-s23-r1",
+    "product_id": "samsung-s23",
+    "title": "Samsung Galaxy S23",
+    "author": "Rohan",
+    "rating": 4.5,
+    "review_text": "Excellent display brightness and good battery efficiency. Camera output is good in daylight. The bad thing is occasional heating in gaming, and call quality is poor in noisy places."
+  },
+  {
+    "id": "oneplus-11-r1",
+    "product_id": "oneplus-11",
+    "title": "OnePlus 11",
+    "author": "Sana",
+    "rating": 4.3,
+    "review_text": "Excellent charging speed and good value for money. The UI is clean and performance is good. The bad part is camera consistency, and low-light video quality is poor."
+  }
+]
