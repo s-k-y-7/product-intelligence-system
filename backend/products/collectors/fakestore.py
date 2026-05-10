@@ -54,5 +54,5 @@ class FakeStoreCollector(BaseCollector):
                 "items": items
             },
             "identifier": full_url,
-            "data_type": "json"
+            "data_type": "JSON"
         }

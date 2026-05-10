@@ -2,6 +2,8 @@ from .dummyjson import DummyJsonCollector
 from .fakestore import FakeStoreCollector
 from .local_ecommerce_collector import LocalEcommerceCollector
 from .local_ecommerce_2_collector import LocalEcommerceCollector_2
+from .local_youtube_collector import LocalYoutubeCollector
+from .local_text_review_collector import LocalTextReviewCollector
 
 
 
@@ -11,7 +13,9 @@ class CollectorFactory:
         "dummyjson": DummyJsonCollector,
         "fakestore": FakeStoreCollector,
         "local_ecommerce": LocalEcommerceCollector,
-        "local_ecommerce_2": LocalEcommerceCollector_2
+        "local_ecommerce_2": LocalEcommerceCollector_2,
+        "local_youtube": LocalYoutubeCollector,
+        "local_text_review": LocalTextReviewCollector
     }
 
     @classmethod

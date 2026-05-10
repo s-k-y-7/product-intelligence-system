@@ -9,8 +9,7 @@ from products.serializers import ProductSerializer
 from products.services.source_discovery import SourceDiscoveryService
 from products.services.data_collection import DataCollectionService
 from products.services.insights import InsightService
-
-
+from products.tasks import run_pipeline
 
 class ProductViewSet(viewsets.ModelViewSet):
 
@@ -20,8 +19,8 @@ class ProductViewSet(viewsets.ModelViewSet):
 
 
     def perform_create(self, serializer):
-
-        serializer.save(status=Product.Status.CREATED)
+        product = serializer.save(status=Product.Status.CREATED)
+        run_pipeline.delay(product.id)
 
 
     @action(detail=True, methods=["post"])

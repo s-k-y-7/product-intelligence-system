@@ -5,12 +5,16 @@ class InsightService:
 
     def generate(self, product):
         from products.services.processing import ProcessingService
+        from products.services.text_insight_orchestrator import TextInsightOrchestrator
 
         processed_data = ProcessingService().process_product(product)
 
         offers = processed_data.get("offers", [])
-        pros = processed_data.get("pros", [])
-        cons = processed_data.get("cons", [])
+        review_texts = processed_data.get("review_texts", [])
+
+        text_insight = TextInsightOrchestrator().generate(review_texts)
+        pros = text_insight.get("pros_summary", [])
+        cons = text_insight.get("cons_summary", [])
 
         # ---- No offers found ----
         if not offers:
@@ -22,6 +26,9 @@ class InsightService:
                 "platform_scores": [],
                 "pros_summary": pros,
                 "cons_summary": cons,
+                "text_insight_mode": text_insight.get("mode"),
+                "text_verdict": text_insight.get("verdict"),
+                "text_confidence": text_insight.get("confidence"),
             }
 
             self._save_insight(product, insight_content)
@@ -88,9 +95,12 @@ class InsightService:
         insight_content = {
             "canonical_product": best_offer["title"],
             "best_platform": best_offer["platform"],
-            "platform_scores": platform_scores[0],
+            "platform_scores": platform_scores,
             "pros_summary": pros,
             "cons_summary": cons,
+            "text_insight_mode": text_insight.get("mode"),
+            "text_verdict": text_insight.get("verdict"),
+            "text_confidence": text_insight.get("confidence"),
         }
 
         self._save_insight(product, insight_content)

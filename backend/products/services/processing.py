@@ -28,7 +28,11 @@ class ProcessingService:
 
             elif source_type in ["VIDEO", "REVIEW"]:
 
-                review_texts.append(raw.content)
+                text = raw.content
+                if isinstance(text, dict):
+                    text = str(text)
+                if isinstance(text, str) and text.strip():
+                    review_texts.append(text)
 
                 p, c = self.extract_pros_cons(raw.content)
 
@@ -44,7 +48,7 @@ class ProcessingService:
 
     def extract_best_offer(self, raw):
 
-        if raw.data_type != "json":
+        if raw.data_type != "JSON":
             return None
 
         import json
