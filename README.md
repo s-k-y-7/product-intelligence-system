@@ -6,7 +6,7 @@
 
 ## 🎥 Demo Video
 
-[Watch the Demo Video 🎬](Assets/Demo_Video.mov)
+[Watch the Demo Video 🎬](Assets/Demo_Video.mp4)
 
 ---
 
