@@ -1,7 +1,7 @@
 # Product Intelligence & Validation Platform
 
 <p align="center">
-  A unified platform that aggregates product data from various sources (e-commerce, reviews, YouTube) and generates granular, actionable AI-based product intelligence reports using Gemini AI.
+  A unified platform that aggregates product data from various sources (e-commerce, reviews, YouTube) and generates granular, actionable AI-based product intelligence reports using Groq.
 </p>
 
 ## 🎥 Demo Video
@@ -25,7 +25,7 @@
 
 In today's fragmented e-commerce ecosystem, making an informed product decision requires manually sifting through hundreds of reviews, watching multiple YouTube videos, and comparing prices across platforms. 
 
-The **Product Intelligence & Validation Platform** automates this process. It acts as an asynchronous intelligence pipeline that gathers raw, unstructured data from disparate sources, processes it through Google's Gemini AI, and presents a cohesive, highly actionable summary. Instead of just basic sentiment analysis, it extracts detailed pros/cons, expert consensus, and comparative platform metrics.
+The **Product Intelligence & Validation Platform** automates this process. It acts as an asynchronous intelligence pipeline that gathers raw, unstructured data from disparate sources, processes it through Groq, and presents a cohesive, highly actionable summary. Instead of just basic sentiment analysis, it extracts detailed pros/cons, expert consensus, and comparative platform metrics.
 
 ---
 
@@ -37,7 +37,7 @@ The architecture relies on an asynchronous event-driven model:
 1. **Frontend (React)**: Submits search queries to the backend.
 2. **Backend (Django)**: Receives the request, logs the task, and queues it via Celery/Redis.
 3. **Mock Services (FastAPI)**: A unified mock server simulating live APIs from multiple platforms.
-4. **AI Processing (Gemini)**: The Celery worker fetches the aggregated data and prompts Gemini AI to synthesize the final intelligence report.
+4. **AI Processing (Groq)**: The Celery worker fetches the aggregated data and prompts Groq to synthesize the final intelligence report.
 
 ---
 
@@ -45,7 +45,7 @@ The architecture relies on an asynchronous event-driven model:
 
 - **Multi-Source Data Aggregation**: Seamlessly combines data from E-commerce platforms, YouTube transcripts, and Text Reviews.
 - **Asynchronous AI Pipeline**: Utilizes Celery and Redis to handle long-running AI generation tasks in the background without blocking the UI.
-- **Granular AI Insights**: Leverages Gemini AI to generate expert recommendations, feature breakdowns, and sentiment analysis beyond simple positive/negative metrics.
+- **Granular AI Insights**: Leverages Groq to generate expert recommendations, feature breakdowns, and sentiment analysis beyond simple positive/negative metrics.
 - **Unified Mock Environment**: A self-contained FastAPI server simulating external APIs, perfect for local development and testing.
 - **Premium UI/UX**: Built with React and Vite, featuring a sleek, dark-themed, responsive design with micro-animations.
 
@@ -59,7 +59,7 @@ The architecture relies on an asynchronous event-driven model:
 
 ### 2. Processing Pipeline
 ![Processing Pipeline](Assets/Pipeline.png)
-*Real-time status updates as the Celery workers aggregate data and ping Gemini AI.*
+*Real-time status updates as the Celery workers aggregate data and ping the Groq API.*
 
 ### 3. Intelligence Dashboard
 ![Intelligence Dashboard](Assets/Final_Dashboard.png)
@@ -76,11 +76,11 @@ The architecture relies on an asynchronous event-driven model:
 
 ### Backend
 - **Framework**: Django & Django REST Framework
-- **Database**: SQLite (Local Dev)
+- **Database**: PostgreSQL
 - **Task Queue**: Celery with Redis broker
 
 ### AI & Data
-- **AI Model**: Google Gemini AI (`google-generativeai`)
+- **AI Model**: Groq (`groq`)
 - **Mock APIs**: FastAPI (Uvicorn)
 
 ---
